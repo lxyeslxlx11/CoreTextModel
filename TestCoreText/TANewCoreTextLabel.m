@@ -68,6 +68,23 @@ CGRect CGRectFlipped(CGRect rect, CGRect bounds)
     [self setNeedsDisplay];
 
 }
+-(float)getHeightAndSetByShowText:(NSString *)string AndFrame:(CGRect)showFrame
+{
+    _adjustWidth = CGRectGetWidth(showFrame);
+    _showText=[string copy];
+    attributedString=[[NSMutableAttributedString alloc] initWithString:string];
+    //加载attributedString
+    [self setTheAttributedString];
+    //更新设置
+    [self updateFrameWithAttributedString];
+    //刷新界面
+    [self setNeedsDisplay];
+    //设置自身Frame
+    [self setFrame:CGRectMake(showFrame.origin.x, showFrame.origin.y, showFrame.size.width, _adjustSize.height)];
+    return _adjustSize.height;
+    
+}
+
 - (void)updateFrameWithAttributedString
 {
     if (textFrame) {
@@ -93,7 +110,7 @@ CGRect CGRectFlipped(CGRect rect, CGRect bounds)
 #pragma mark set the style call me in handleTheEffect
 -(void)setTheAttributedString
 {
-
+    
 }
 
 //设置字间距

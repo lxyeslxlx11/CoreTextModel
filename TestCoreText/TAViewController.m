@@ -41,7 +41,7 @@
     aaa.showText = text;
     frame.size = aaa.adjustSize;
     aaa.frame = frame;
-    aaa.backgroundColor=[UIColor blueColor];
+    aaa.backgroundColor=[UIColor clearColor];
 }
 
 - (void)didReceiveMemoryWarning

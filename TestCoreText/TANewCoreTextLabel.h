@@ -19,17 +19,19 @@
 @property (nonatomic) CGSize adjustSize;
 
 - (void)updateFrameWithAttributedString;
+///send in frame height can be any value
+-(float)getHeightAndSetByShowText:(NSString *)string AndFrame:(CGRect)showFrame;
 
 -(void)setTextCharacterSpacing:(int)characterSpacing Range:(NSRange)Range;
-//设置行间距、段间距
+///设置行间距、段间距
 -(void)setTextStyleLinesSpacing:(CGFloat)LinesSpacing ParagraphSpacing:(CGFloat)ParagraphSpacing Range:(NSRange)Range;
-//设置行间距、段间距、首行缩进值
+///设置行间距、段间距、首行缩进值
 -(void)setTextStyleLinesSpacing:(CGFloat)LinesSpacing ParagraphSpacing:(CGFloat)ParagraphSpacing FirstLineHeadIndent:(CGFloat)firstHeadIndent Range:(NSRange)Range;
-//设置文本字体
+///设置文本字体
 -(void)setTextFont:(UIFont *)textFont Range:(NSRange)Range;
-//设置字体颜色
+///设置字体颜色
 -(void)setTextColor:(UIColor *)textColor Range:(NSRange)Range;
-//设置下划线
+///设置下划线
 -(void)setUnderLineRange:(NSRange)Range;
 
 @end
