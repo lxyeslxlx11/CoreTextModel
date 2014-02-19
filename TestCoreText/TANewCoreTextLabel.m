@@ -97,6 +97,7 @@ CGRect CGRectFlipped(CGRect rect, CGRect bounds)
     CFRange fitCFRange = CFRangeMake(0,0);
     CGSize maxSize = CGSizeMake(_adjustWidth, CGFLOAT_MAX);
     CGSize sz = CTFramesetterSuggestFrameSizeWithConstraints(framesetter,CFRangeMake(0,0),NULL,maxSize,&fitCFRange);
+    sz.height+=1;//显示时iOS6不能正常显示，调整一像素
     _adjustSize = sz;
     CGRect rect = (CGRect){CGPointZero, sz};
     CGPathAddRect(path, NULL, rect);
